@@ -33,3 +33,4 @@ def test2(url, data_sheet):
     badge_element = str(test2_data.sht.cell(2,8).value)
     list_item2_badge = driver.find_elements(By.CSS_SELECTOR, badge_element)[0].text
     check_parameters('Second list item badge', expected_list_item2_badge, list_item2_badge)
+    browser_close(driver)
