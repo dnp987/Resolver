@@ -1,5 +1,4 @@
-#if __name__ == '__main__':
-def test2():
+def test2(url):
     from selenium import webdriver
     from selenium.webdriver.support.ui import WebDriverWait
     from selenium.webdriver.support import expected_conditions as EC
