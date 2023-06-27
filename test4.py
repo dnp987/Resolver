@@ -20,3 +20,4 @@ def test4(url):
             print ('Button',index,'is enabled')
         else:
             print ('Button',index,'is disabled')
+    browser_close(driver)

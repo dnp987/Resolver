@@ -17,4 +17,4 @@ def test6(url):
     expected_table_value = 'Ventosanzap'
     actual_value = (get_cell(driver, 2, 2))
     check_parameters('Cell 2 2 contents', expected_table_value, actual_value)
-          
+    browser_close(driver)

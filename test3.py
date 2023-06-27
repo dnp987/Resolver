@@ -23,3 +23,4 @@ def test3(url):
     ActionChains(driver).move_to_element(dropdown).click(dropdown).perform()
     ActionChains(driver).move_to_element(dropdown_item_select).click(dropdown_item_select).perform()
     #sleep(5)
+    browser_close(driver)
