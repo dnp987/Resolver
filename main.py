@@ -13,7 +13,7 @@ if __name__ == '__main__':
 
     test1(url,data_sheet)
     test2(url,data_sheet)
-    test3(url)
-    test4(url)
-    test5(url)
-    test6(url)
+    test3(url,data_sheet)
+    test4(url,data_sheet)
+    test5(url,data_sheet)
+    test6(url,data_sheet)
