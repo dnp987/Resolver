@@ -1,5 +1,4 @@
-#if __name__ == '__main__':
-def test1():
+def test1(url):
     from selenium import webdriver
     from selenium.webdriver.support.ui import WebDriverWait
     from selenium.webdriver.support import expected_conditions as EC
@@ -9,7 +8,6 @@ def test1():
     from check_parameters import check_parameters
       
     print ('Running test 1: checking section heading, email address and password inputs, Login button.')    
-    url = 'C:/Users/dpenn/Desktop/Projects/Resolver/QE-index.html'
     driver = browser_start(url)
     wait = WebDriverWait(driver, 2)
     wait.until(EC.visibility_of_element_located((By.ID, 'test-1-div'))) # wait for the page to load

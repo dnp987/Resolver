@@ -1,5 +1,4 @@
-#if __name__ == '__main__':
-def test4():
+def test4(url):
     from selenium import webdriver
     from selenium.webdriver.support.ui import WebDriverWait
     from selenium.webdriver.support import expected_conditions as EC
@@ -9,7 +8,6 @@ def test4():
     from check_parameters import check_parameters
     
     print ('Running test 4: checking section heading, checking that first button is enabled and the second one disabled.')
-    url = 'C:/Users/dpenn/Desktop/Projects/Resolver/QE-index.html'
     driver = browser_start(url)
     wait = WebDriverWait(driver, 2)
     wait.until(EC.visibility_of_element_located((By.ID, 'test-4-div'))) # wait for the page to load
