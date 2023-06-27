@@ -5,9 +5,9 @@ if __name__ == '__main__':
     from test4 import test4
     from test5 import test5
     from test6 import test6
-    
+
     url = 'C:/Users/dpenn/Desktop/Projects/Resolver/QE-index.html'
-    
+
     test1(url)
     test2(url)
     test3(url)
