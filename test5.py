@@ -27,15 +27,15 @@ def test5(url,data_sheet):
     heading5 = driver.find_element(By.CSS_SELECTOR, heading5_element).text
     check_parameters('Section heading', expected_test5_heading, heading5)
     button_element = test5_data.sht.cell(2,4).value
-    button = WebDriverWait(driver, 30).until(EC.visibility_of_element_located((By.ID, button_element)))
-    ActionChains(driver).move_to_element(button).click(button).perform()
+    test5_button = WebDriverWait(driver, 30).until(EC.visibility_of_element_located((By.ID, button_element)))
+    ActionChains(driver).move_to_element(test5_button).click(test5_button).perform()
     alert_element = test5_data.sht.cell(2,5).value
     test5_alert = driver.find_elements(By.CSS_SELECTOR, alert_element)[0].text
     page_src = driver.page_source
     message_found = re.search(test5_alert, page_src)
     if (message_found != None):
         print ('Message found:',test5_alert)
-    button = driver.find_element(By.ID, button_element) # get the button again after it was clicked
+    test5_button = driver.find_element(By.ID, button_element) # get the button again after it was clicked
     if button.is_enabled:
         print ('Button is enabled')
     else:

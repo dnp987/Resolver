@@ -25,8 +25,8 @@ def test4(url,data_sheet):
     heading4 = driver.find_element(By.CSS_SELECTOR, heading4_element).text
     check_parameters('Section heading', expected_test4_heading, heading4)
     button_element = test4_data.sht.cell(2,4).value
-    buttons = driver.find_elements(By.CSS_SELECTOR, button_element)
-    for index, button in enumerate(buttons):
+    test4_buttons = driver.find_elements(By.CSS_SELECTOR, button_element)
+    for index, button in enumerate(test4_buttons):
         disabled = button.get_attribute('disabled')
         if disabled:
             print ('Button',index,'is disabled')
