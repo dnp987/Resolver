@@ -7,10 +7,14 @@ def test1(url, data_sheet):
     from browser_tools import browser_start, browser_close
     from check_parameters import check_parameters
     from excel_utils import Excel_utils
-      
-    print ('Running test 1: checking section heading, email address and password inputs, Login button.')    
-    driver = browser_start(url)
+    
     test1_data = Excel_utils(data_sheet, 'test1', 'in')
+    browser = test1_data.sht.cell(2,9).value
+    print ('Running test 1: checking section heading, email address and password inputs, Login button. Browser:',browser) 
+    driver = browser_start(browser,url)
+    if driver == False:
+        print ("*** Browser unknown, test halting ***")
+        return()
     wait = WebDriverWait(driver, 2)
     page_load_element = test1_data.sht.cell(2,1).value
     wait.until(EC.visibility_of_element_located((By.ID, page_load_element))) # wait for the page to load

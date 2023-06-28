@@ -8,10 +8,14 @@ def test3(url,data_sheet):
     from browser_tools import browser_start, browser_close
     from check_parameters import check_parameters
     from excel_utils import Excel_utils
-    
-    print ('Running test 3: checking section heading, checking that Option 1 is the default drop down list section.')
-    driver = browser_start(url)
+        
     test3_data = Excel_utils(data_sheet, 'test3', 'in')
+    browser = test3_data.sht.cell(2,8).value
+    print ('Running test 3: checking section heading, checking that Option 1 is the default drop down list section. Browser: ',browser)
+    driver = browser_start(browser, url)
+    if driver == False:
+        print ("*** Browser unknown, test halting ***")
+        return()
     wait = WebDriverWait(driver, 2)
     page_load_element = test3_data.sht.cell(2,1).value
     #wait.until(EC.visibility_of_element_located((By.ID, 'test-3-div'))) # wait for the page to load

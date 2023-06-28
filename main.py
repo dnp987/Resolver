@@ -10,7 +10,6 @@ if __name__ == '__main__':
     data_sheet = 'C:/Users/dpenn/Desktop/Projects/Resolver/resolver.xlsx'
     data_in = Excel_utils(data_sheet, 'main', 'in')
     url = data_in.sht.cell(1,1).value # Get the URL of the test site
-
     test1(url,data_sheet)
     test2(url,data_sheet)
     test3(url,data_sheet)

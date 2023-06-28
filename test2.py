@@ -8,9 +8,13 @@ def test2(url, data_sheet):
     from check_parameters import check_parameters
     from excel_utils import Excel_utils
     
-    print ('Running test 2: checking section heading, checking that section list has three entries, second item and badge.')     
-    driver = browser_start(url)
     test2_data = Excel_utils(data_sheet, 'test2', 'in')
+    browser = test2_data.sht.cell(2,9).value
+    print ('Running test 2: checking section heading, checking that section list has three entries, second item and badge. Browser: ',browser) 
+    driver = browser_start(browser,url)
+    if driver == False:
+        print ("*** Browser unknown, test halting ***")
+        return()
     wait = WebDriverWait(driver, 2)
     page_load_element = test2_data.sht.cell(2,1).value
     wait.until(EC.visibility_of_element_located((By.ID, page_load_element))) # wait for the page to load

@@ -7,10 +7,15 @@ def test6(url,data_sheet):
     from check_parameters import check_parameters
     from get_cell import get_cell
     from excel_utils import Excel_utils
+    from scroll_browser import Scroll_Browser
     
-    print ('Running test 6: checking section heading, check contents of table cell 2, 2.')
-    driver = browser_start(url)
     test6_data = Excel_utils(data_sheet, 'test6', 'in')
+    browser = test6_data.sht.cell(2,5).value
+    print ('Running test 6: checking section heading, check contents of table cell 2, 2. Browser: ',browser)
+    driver = browser_start(browser, url)
+    if driver == False:
+        print ("*** Browser unknown, test halting ***")
+        return()
     wait = WebDriverWait(driver, 2)
     page_load_element = test6_data.sht.cell(2,1).value
     wait.until(EC.visibility_of_element_located((By.ID, page_load_element))) # wait for the page to load
