@@ -6,3 +6,5 @@ The assessment code is also available on GitHub, https://github.com/dnp987/Resol
 Selenium and Python were used to for the code and the main function, main.py, calls tests 1-6. Each one addressed the corresponding test described in the guide. The code was written to be straightforward and easy to follow. Pytest or Unittest were not used because VS Code and Eclipse both require plug-ins which may not run in a corporate environment.
 
 Note that main.py is where all the tests are run from. All 6 tests are called from main.py one by one.
+
+Parametes for all tests are in the spreadsheet file "resolver.xlsx". The browser to be used for each test can be specified, as well as the test parameters.
