@@ -36,7 +36,7 @@ def test5(url,data_sheet):
     if (message_found != None):
         print ('Message found:',test5_alert)
     test5_button = driver.find_element(By.ID, button_element) # get the button again after it was clicked
-    if button.is_enabled:
+    if test5_button.is_enabled:
         print ('Button is enabled')
     else:
         print ('Button is disabled')
