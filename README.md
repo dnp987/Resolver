@@ -8,4 +8,7 @@ Selenium and Python were used to for the code and the main function, main.py, ca
 Note that main.py is where all the tests are run from. All 6 tests are called from main.py one by one.
 
 Parametes for all tests are in the spreadsheet file "resolver.xlsx". The browser to be used for each test can be specified, as well as the test parameters.
+<<<<<<< HEAD
 
+=======
+>>>>>>> b723734b12f91812793f8f05ce66ac6abc6ba0d3
