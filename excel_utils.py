@@ -1,8 +1,6 @@
 import openpyxl
 from openpyxl.styles import Font
-
 class Excel_utils:
-
     def __init__(self, filename, sheet, in_out):
         self.filename = filename
         self.sheet = sheet
